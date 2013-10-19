@@ -1,0 +1,8 @@
+body > div { display: none; }
+body[data-screen="start"]    #start,
+body[data-screen="question"] #question,
+body[data-screen="answer"]   #answer,
+body[data-screen="final"]    #final { display: block; }
+
+#answer .answers .correct { background: green; }
+#answer .answers .incorrect { background: red; }

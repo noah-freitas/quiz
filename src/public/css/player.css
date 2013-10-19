@@ -1,0 +1,14 @@
+html, body { height: 100%; }
+body {
+    display: flex;
+    flex-direction: column;
+}
+button.answer {
+    flex: 1 1 auto;
+}
+body:not(.active) button.answer {
+    background: white;
+}
+button.answer.selected {
+    background: orange !important;
+}
