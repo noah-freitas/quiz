@@ -5,21 +5,29 @@ var express = require('express'),
     server  = http.createServer(app),
     io      = require('socket.io').listen(server);
 
+// Config
+var ansPause   = 1500,
+    numRounds  = 3,
+    qDuration  = 10,
+    qPath      = '../data/halloween-trivia.json';
+
 // State
 var board      = null,
     players    = [],
+    questions  = [],
     round      = null,
     rounds     = [];
 
 // Functions
 var doRound       = function (number) {
+                        var q = questions.shift();
                         round = {
-                            choices       : ['1', '2', '3', '4'],
-                            correctAnswer : String(Math.floor(Math.random() * 4) + 1),
+                            choices       : q.choices,
+                            correctAnswer : q.correct,
                             number        : number + 1,
                             playerAnswers : [],
-                            question      : 'What is your favorite number?',
-                            remaining     : 5,
+                            question      : q.text,
+                            remaining     : qDuration,
                             time          : currentTime()
                         };
                         rounds.push(round);
@@ -28,10 +36,10 @@ var doRound       = function (number) {
                     },
     doTimer       = function (number, round) {
                         round.remaining -= 1;
-                        if (round.remaining === 0) {
+                        if (round.remaining === 0 || round.playerAnswers.length === players.length) {
                             clearInterval(round.timer);
                             io.sockets.emit('question:end', { correct: round.correctAnswer, answers: round.playerAnswers });
-                            if (number === 4) {
+                            if (number === numRounds) {
                                 setTimeout(function () {
                                     io.sockets.emit('game:end', players.map(function (p) {
                                         return {
@@ -49,15 +57,16 @@ var doRound       = function (number) {
                                             else                 return 1;
                                         }
                                     }));
-                                }, 1500);
+                                }, ansPause);
                             } else {
-                                setTimeout(doRound.bind(null, number + 1), 1500);
+                                setTimeout(doRound.bind(null, number + 1), ansPause);
                             }
                         } else {
                             io.sockets.emit('question:countdown', round.remaining);
                         }
                     },
     getPlayer     = function (name) { return players.filter(function (player) { return player.name === name; })[0]; },
+    loadQuestions = function () { questions = require(qPath).slice(0, numRounds + 1); },
     playerNames   = function () { return players.map(function (player) { return player.name; }).sort(); },
     registerBoard = function (socket) {
                         board = socket;
@@ -83,7 +92,7 @@ var doRound       = function (number) {
                         players.push({ name: name, socket: socket, time: 0, correct: 0 });
                         io.sockets.emit('player:change', playerNames());
                     },
-    startGame     = function () { rounds = []; doRound(0); },
+    startGame     = function () { loadQuestions(); rounds = []; doRound(0); },
     currentTime   = function () { return (new Date).getTime(); };
 
 app.use(express.static(__dirname + '/public'));
