@@ -15,9 +15,169 @@
 		"correct": "Michael Myers"
 	},
 	{
-		"text": "Staying awake is your only defense from this killer with the razor sharp claw",
+		"text": "Staying awake is your only defense from this killer with the razor sharp claw.",
 		"choices": ["Freddy Kruger", "Edward Scissorhands", "Werewolf", "Dracula"],
 		"correct": "Freddy Kruger"
+	},
+	{
+		"text": "Which actor played Freddy Kruger?",
+		"choices": ["Robert Englund", "Robert Carlyle", "Robert Duvall", "Johnny Depp"],
+		"correct": "Robert Englund"
+	},
+	{
+		"text": "Who wrote A Nightmare on Elm Street?",
+		"choices": ["Wes Craven", "H. P. Lovecraft", "John Carpenter", "George A. Romero"],
+		"correct": "Wes Craven"
+	},
+	{
+		"text": "The film Halloween was released in what year?",
+		"choices": ["1978", "1968", "1984", "1970"],
+		"correct": "1978"
+	},
+	{
+		"text": "How many Friday the 13th movies are there?",
+		"choices": ["12", "11", "13", "10"],
+		"correct": "12"
+	},
+	{
+		"text": "How many Halloween movies are there?",
+		"choices": ["10", "11", "8", "9"],
+		"correct": "10"
+	},
+	{
+		"text": "How many A Nightmare on Elm Street movies are there?",
+		"choices": ["10", "11", "8", "9"],
+		"correct": "9"
+	},
+	{
+		"text": "This young girl was possesed by a demon in The Exorcist.",
+		"choices": ["Regan MacNeil", "Laurie Strode", "Valerie Lewton", "Rose Byrne"],
+		"correct": "Regan MacNeil"
+	},
+	{
+		"text": "Which vegetable were Jack-o-laterns originally made out of?",
+		"choices": ["Turnips", "Pumpkins", "Potatos", "Watermelons"],
+		"correct": "Turnips"
+	},
+	{
+		"text": "Who wrote the novel Frankenstein?",
+		"choices": ["Mary Shelley", "Mary Wollstonecraft", "Percy Shelley", "Bram Stroker"],
+		"correct": "Mary Shelley"
+	},
+	{
+		"text": "The name Dracula came from which historical figure?",
+		"choices": ["Vlad the Impaler", "Attila the Hun", "Mehmed the Conqueror", "Ivan the Terrible"],
+		"correct": "Vlad the Impaler"
+	},
+	{
+		"text": "Transylvania is a region in which country?",
+		"choices": ["Romania", "Bulgaria", "Slovakia", "Russia"],
+		"correct": "Romania"
+	},
+	{
+		"text": "Which region in the world do Pumpkins originate from?",
+		"choices": ["Central America", "Central Asia", "Ireland", "Australia"],
+		"correct": "Central America"
+	},
+	{
+		"text": "Halloween has it's origins in which ancient Celtic festival?",
+		"choices": ["Samhain", "Hop-tu-Naa", "Calan Gaeaf", "Allantide"],
+		"correct": "Samhain"
+	},
+	{
+		"text": "Which music icon directed Halloween (2007) and Halloween II (2009)?",
+		"choices": ["David Bowie", "Sting", "Rob Zombie", "Marilyn Manson"],
+		"correct": "Rob Zombie"
+	},
+	{
+		"text": "Which character chases the killer in the Halloween films?",
+		"choices": ["Dr. Van Helsing", "Dr. Loomis", "Dr. Frankenstein", "Dr. Brackett"],
+		"correct": "Dr. Loomis"
+	},
+	{
+		"text": "In the first Halloween film, who plays the role of Laurie Strode?",
+		"choices": ["Linda Hamilton", "Jamie Lee Curtis", "Sharon Stone", "Glenn Close"],
+		"correct": "Jamie Lee Curtis"
+	},
+	{
+		"text": "The killer in Halloween escapes from which hospital?",
+		"choices": ["The Grove Field Facility", "The Jung Institution", "Smith Grove Sanatorium", "The Smith-Hoover Hospital"],
+		"correct": "Smith Grove Sanatorium"
+	},
+	{
+		"text": "What is the setting for the first Halloween movie?",
+		"choices": ["Crystal Lake", "Springwood", "Haddonfield", "Amityville"],
+		"correct": "Haddonfield"
+	},
+	{
+		"text": "Who directed the first Halloween film?",
+		"choices": ["John Carpenter", "Wes Craven", "Ridley Scott", "Stephen Spielberg"],
+		"correct": "John Carpenter"
+	},
+	{
+		"text": "What kind of monster is a griffon?",
+		"choices": ["Half eagle half lion", "Half man half lion", "Half lion half snake", "Half eagle half horse"],
+		"correct": "Half eagle half lion"
+	},
+	{
+		"text": "What is the name of the scary young girl in the movie, The Ring?",
+		"choices": ["Samara", "Tamara", "Sonya", "Tanya"],
+		"correct": "Samara"
+	},
+	{
+		"text": "What kind of candy wants you to \"Taste the Rainbow\"?",
+		"choices": ["Starburst", "Life Savers", "Skittles", "Mojos"],
+		"correct": "Skittles"
+	},
+	{
+		"text": "Which country does Pez originate from?",
+		"choices": ["Germany", "America", "Austria", "France"],
+		"correct": "Austria"
+	},
+	{
+		"text": "Which candy was invented in 1896?",
+		"choices": ["Tootsie Rolls", "Rockets", "Candy corns", "Starbursts"],
+		"correct": "Tootsie Rolls"
+	},
+	{
+		"text": "What candy caused lawsuits when the candy exploded in children's mouths?",
+		"choices": ["Gobstoppers", "Malt Balls", "Fizz Bombs", "Rockets"],
+		"correct": "Gobstoppers"
+	},
+	{
+		"text": "\"Have you checked the children\" is a famous quote from which film?",
+		"choices": ["The Shining", "Scream", "When a Stranger Calls", "The Mist"],
+		"correct": "When a Stranger Calls"
+	},
+	{
+		"text": "Which movie stated now there is a name for terror?",
+		"choices": ["Christine", "Cujo", "Carrie", "Rosemary's Baby"],
+		"correct": "Cujo"
+	},
+	{
+		"text": "In which of these horror movies would you see Kevin Bacon?",
+		"choices": ["Nightmare on Elm Street", "Friday the 13th", "Halloween", "The Amityville Horror"],
+		"correct": "Friday the 13th"
+	},
+	{
+		"text": "It is said that if a girl puts rosemary and a silver coin under her pillow on Halloween night, she will dream of what?",
+		"choices": ["Her future husband", "Her death", "Her mother", "Her guardian angel"],
+		"correct": "Her future husband"
+	},
+	{
+		"text": "This film created the zombie genre.",
+		"choices": ["Night of the Living Dead", "Day of the Dead", "Dawn of the Dead", "They Live"],
+		"correct": "Night of the Living Dead"
+	},
+	{
+		"text": "Where did Halloween originate?",
+		"choices": ["America", "England", "Scotland", "Ireland"],
+		"correct": "Ireland"
+	},
+	{
+		"text": "Which of the following is the fear of Friday the 13th?",
+		"choices": ["Paraskavedekatriaphobia", "Samhainophobia", "Triskaidekaphobia", "Wiccaphobia"],
+		"correct": "Paraskavedekatriaphobia"
 	}
  ]
  

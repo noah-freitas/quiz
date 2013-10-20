@@ -16,5 +16,14 @@
 
     server.on('question:start', render);
     server.on('question:end', bodyClass.bind(null, false));
-    server.emit('player:register', prompt('Name:'));
+
+    document.addEventListener('DOMContentLoaded', function () {
+        $$('#join').addEventListener('click', function () {
+            var name = $$('#name').value;
+            if (name) {
+                server.emit('player:register', name);
+                document.body.innerHTML = '<p>Waiting for game to start...</p>';
+            }
+        });
+    });
 }());

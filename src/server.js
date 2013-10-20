@@ -6,8 +6,8 @@ var express = require('express'),
     io      = require('socket.io').listen(server);
 
 // Config
-var ansPause   = 1500,
-    numRounds  = 3,
+var ansPause   = 2000,
+    numRounds  = 9,
     qDuration  = 10,
     qPath      = '../data/halloween-trivia.json';
 
@@ -66,7 +66,7 @@ var doRound       = function (number) {
                         }
                     },
     getPlayer     = function (name) { return players.filter(function (player) { return player.name === name; })[0]; },
-    loadQuestions = function () { questions = require(qPath).slice(0, numRounds + 1); },
+    loadQuestions = function () { questions = require(qPath).sort(shuffle).slice(0, numRounds + 1).map(function (q) { q.choices = q.choices.sort(shuffle); return q; }); },
     playerNames   = function () { return players.map(function (player) { return player.name; }).sort(); },
     registerBoard = function (socket) {
                         board = socket;
@@ -92,6 +92,7 @@ var doRound       = function (number) {
                         players.push({ name: name, socket: socket, time: 0, correct: 0 });
                         io.sockets.emit('player:change', playerNames());
                     },
+    shuffle       = function () { return Math.random() < 0.5 ? -1 : 1; },
     startGame     = function () { loadQuestions(); rounds = []; doRound(0); },
     currentTime   = function () { return (new Date).getTime(); };
 
