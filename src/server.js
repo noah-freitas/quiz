@@ -23,7 +23,7 @@ var doRound       = function (number) {
                             time          : currentTime()
                         };
                         rounds.push(round);
-                        io.sockets.emit('question:start', { text: round.question, choices: round.choices, remaining: round.remaining });
+                        io.sockets.emit('question:start', { text: round.question, choices: round.choices, remaining: round.remaining, players: players.map(function (p) { return p.name; }).sort() });
                         round.timer = setInterval(doTimer.bind(null, number, round), 1000);
                     },
     doTimer       = function (number, round) {
@@ -32,22 +32,24 @@ var doRound       = function (number) {
                             clearInterval(round.timer);
                             io.sockets.emit('question:end', { correct: round.correctAnswer, answers: round.playerAnswers });
                             if (number === 4) {
-                                io.sockets.emit('game:end', players.map(function (p) {
-                                    return {
-                                        correct : p.correct,
-                                        name    : p.name,
-                                        time    : p.time
-                                    };
-                                }).sort(function (a, b) {
-                                    if (a.correct > b.correct) {
-                                        return -1;
-                                    } else if (a.correct < b.correct) {
-                                        return 1;
-                                    } else {
-                                        if (a.time < b.time) return -1;
-                                        else                 return 1;
-                                    }
-                                }));
+                                setTimeout(function () {
+                                    io.sockets.emit('game:end', players.map(function (p) {
+                                        return {
+                                            correct : p.correct,
+                                            name    : p.name,
+                                            time    : p.time
+                                        };
+                                    }).sort(function (a, b) {
+                                        if (a.correct > b.correct) {
+                                            return -1;
+                                        } else if (a.correct < b.correct) {
+                                            return 1;
+                                        } else {
+                                            if (a.time < b.time) return -1;
+                                            else                 return 1;
+                                        }
+                                    }));
+                                }, 1500);
                             } else {
                                 setTimeout(doRound.bind(null, number + 1), 1500);
                             }
