@@ -1,0 +1,23 @@
+ [
+	{
+		"text": "What are the official colors of Halloween?",
+		"choices": ["Black and Orange", "Purple and Orange", "Black and Purple", "Black and White"],
+		"correct": "Black and Orange"
+	},
+	{
+		"text": "What are the official colors of the traditional Candy Corn?",
+		"choices": ["Red, Orange and White", "Red, Yellow and White", "Orange, Red and White", "Orange, Yellow and White"],
+		"correct": "Orange, Yellow and White"
+	},
+	{
+		"text": "What horror movie killer escaped from the asylum and murders on Halloween Night?",
+		"choices": ["Freddy Kruger", "Jason Vorhees", "Michael Myers", "Dracula"],
+		"correct": "Michael Myers"
+	},
+	{
+		"text": "Staying awake is your only defense from this killer with the razor sharp claw",
+		"choices": ["Freddy Kruger", "Edward Scissorhands", "Werewolf", "Dracula"],
+		"correct": "Freddy Kruger"
+	},
+ ]
+ 
