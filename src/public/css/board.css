@@ -10,7 +10,10 @@ body[data-screen="final"]    #final { display: block; }
 #answer .answers { padding: 0; color: white; }
 #answer .answers .correct { background: green; }
 #answer .answers .incorrect { background: red; }
-
+.timer {
+    text-align: center;
+    font-size: 10em;
+}
 .badges {
     display: flex;
     flex-flow: row wrap;
