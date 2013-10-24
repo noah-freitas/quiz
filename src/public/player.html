@@ -4,14 +4,26 @@
         <meta charset="utf-8">
         <meta name="viewport" content="initial-scale=1">
         <title>Quiz</title>
+        <link rel="stylesheet" href="/css/boostrap.min.css">
+        <link rel="stylesheet" href="/css/boostrap-theme.min.css">
         <link rel="stylesheet" href="/css/player.css">
         <script src="/socket.io/socket.io.js"></script>
         <script src="/js/dom.js"></script>
         <script src="/js/player.js"></script>
     </head>
     <body>
-        <label for="name">Name:</label>
-        <input id="name">
-        <button id="join">Join Game</button>
+        <form class="form-horizontal" role="form">
+            <div class="form-group">
+                <label for="name" class="col-lg-2 control-label">Name</label>
+                <div class="col-lg-10">
+                    <input type="email" class="form-control" id="name" placeholder="Name">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-10">
+                    <button id="join" class="btn btn-primary btn-block btn-lg">Join Game</button>
+                </div>
+            </div>
+        </form>
     </body>
 </html>
