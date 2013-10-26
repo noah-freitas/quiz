@@ -30,4 +30,6 @@
         $$('#login').addEventListener('submit', login);
         $$('#join').addEventListener('click', login);
     });
+
+    window.onerror = function (e) { document.body.innerHTML = JSON.stringify(e); };
 }());
