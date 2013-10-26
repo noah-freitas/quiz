@@ -1,8 +1,7 @@
 ;(function () {
     var bodyClass = function (activate) { document.body.classList[activate ? 'add' : 'remove']('active'); },
         login     = function (e) {
-                        if (e.stopPropagation) e.stopPropagation();
-                        if (e.preventDefault)  e.preventDefault();
+                        e.stopPropagation(); e.preventDefault();
                         var name = $$('#name').value;
                         if (name) {
                             server.emit('player:register', name);
