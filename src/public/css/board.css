@@ -22,7 +22,7 @@ body[data-screen="final"]    #final { display: block; }
 #answer .answers .correct { background: green; }
 #answer .answers .incorrect { background: red; }
 
-#final table { font-size: 2em; }
+#final table { font-size: 2em; width: 96%; margin: 2%; }
 #final table th { font-size: 1.5em; }
 #final .winner { font-size: 6em; }
 
