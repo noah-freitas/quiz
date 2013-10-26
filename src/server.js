@@ -92,8 +92,9 @@ var doRound       = function (number) {
                         players.push({ name: name, time: 0, correct: 0 });
                         io.sockets.emit('player:change', playerNames());
                     },
+    resetPlayers  = function () { players = players.map(function (player) { player.time = 0; player.correct = 0; return player; })},
     shuffle       = function () { return Math.random() < 0.5 ? -1 : 1; },
-    startGame     = function () { loadQuestions(); rounds = []; doRound(0); },
+    startGame     = function () { loadQuestions(); resetPlayers(); rounds = []; doRound(0); },
     currentTime   = function () { return (new Date).getTime(); };
 
 app.use(express.static(__dirname + '/public'));
