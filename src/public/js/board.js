@@ -1,7 +1,7 @@
 ;(function () {
     var byName            = function (player1, player2) { return player1.name < player2.name ? -1 : player1.name > player2.name ? 1 : 0; },
         changeTimer       = function (time) { $$('#question .timer').innerHTML = time.toString().length < 2 ? '0' + time : time; },
-        playerAnswerTmpl  = function (player) { return '<li class="' + (player.correct ? 'correct' : 'incorrect') + '">' + player.name + ': ' + player.answer + '</li>'; },
+        playerAnswerTmpl  = function (player) { return '<li><p class="' + (player.correct ? 'alert alert-success' : 'alert alert-danger') + '">' + player.name + ': ' + player.answer + '</p></li>'; },
         playerFinalTmpl   = function (player) { return '<tr><td>' + player.name + '</td><td>' + player.correct + '</td><td>' + Math.round(player.time / 1000) + '</td></tr>'; },
         render            = function (players) { $$('#start .players').innerHTML = players.map(toLi).join(''); },
         showAnswer        = function (answer) {
