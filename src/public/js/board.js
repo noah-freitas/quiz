@@ -19,7 +19,7 @@
         startQuestion     = function (q) {
                                 showScreen('question');
                                 $$('#question .text').innerHTML = q.text;
-                                $$('#question .timer').innerHTML = q.remaining;
+                                $$('#question .timer').innerHTML = q.remaining.toString().length < 2 ? '0' + q.remaining : q.remaining;
                                 $$('#question .players').innerHTML = q.players.map(function (p) { return '<li data-player="' + p + '">' + p + '</li>'; }).join('');
                             },
         toLi              = function (text) { return '<li>' + text + '</li>'; },
