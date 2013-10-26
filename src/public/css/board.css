@@ -39,5 +39,6 @@ body[data-screen="final"]    #final { display: block; }
     font-size: 2em;
 }
 
+.panel { margin: 2%; }
 .panel-heading { font-size: 2em; }
 .panel-body { text-align: center; }
