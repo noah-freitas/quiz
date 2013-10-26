@@ -1,6 +1,7 @@
 // Imports
 var express = require('express'),
     http    = require('http'),
+    domain  = require('domain'),
     app     = express(),
     server  = http.createServer(app),
     io      = require('socket.io').listen(server);
@@ -97,6 +98,16 @@ var doRound       = function (number) {
     currentTime   = function () { return (new Date).getTime(); };
 
 app.use(express.static(__dirname + '/public'));
+app.use(function hangups (req, res, next){
+    var reqd = domain.create();
+    reqd.add(req);
+    reqd.add(res);
+    reqd.on('error', function (error) {
+        if (error.code !== 'ECONNRESET') console.error(error, req.url);
+        reqd.dispose();
+    });
+    next();
+});
 
 server.listen('9876');
 
