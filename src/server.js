@@ -98,20 +98,11 @@ var doRound       = function (number) {
     currentTime   = function () { return (new Date).getTime(); };
 
 app.use(express.static(__dirname + '/public'));
-app.use(function hangups (req, res, next){
-    var reqd = domain.create();
-    reqd.add(req);
-    reqd.add(res);
-    reqd.on('error', function (error) {
-        if (error.code !== 'ECONNRESET') console.error(error, req.url);
-        reqd.dispose();
-    });
-    next();
-});
 
 server.listen('9876');
 
 io.sockets.on('connection', function (socket) {
     socket.on('board:register' , registerBoard.bind(null, socket));
     socket.on('player:register', registerPlayer.bind(null, socket));
+    socket.on('disconnect', function () { delete socket; });
 });
