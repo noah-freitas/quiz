@@ -23,6 +23,8 @@ body[data-screen="final"]    #final { display: block; }
 #answer .answers .incorrect { background: red; }
 
 #final table { font-size: 2em; }
+#final table th { font-size: 1.5em; }
+#final .winner { font-size: 6em; }
 
 .badges, .players {
     display: flex;
