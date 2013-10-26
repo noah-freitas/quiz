@@ -8,6 +8,7 @@
                             server.emit('player:register', name);
                             document.body.innerHTML = '<p class="waiting">Waiting for game to start...</p>';
                         }
+                        return false;
                     },
         render    = function (q) {
                         bodyClass(true);
