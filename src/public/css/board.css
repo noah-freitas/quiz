@@ -17,9 +17,12 @@ body[data-screen="final"]    #final { display: block; }
 #question .players { padding: 0; }
 #question .players .answered { background : blue; color: white; }
 
+#answer .panel-body .correct { font-size: 4em; }
 #answer .answers { padding: 0; color: white; }
 #answer .answers .correct { background: green; }
 #answer .answers .incorrect { background: red; }
+
+#final table { font-size: 2em; }
 
 .badges, .players {
     display: flex;
@@ -35,4 +38,4 @@ body[data-screen="final"]    #final { display: block; }
 }
 
 .panel-heading { font-size: 2em; }
-.panel-body { font-size: 3em; text-align: center; }
+.panel-body { text-align: center; }
