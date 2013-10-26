@@ -13,16 +13,14 @@ body[data-screen="final"]    #final { display: block; }
 }
 
 #question .text { font-size: 5em; }
+#question .timer { text-align: center; font-size: 10em; }
 #question .players { padding: 0; }
 #question .players .answered { background : blue; color: white; }
 
 #answer .answers { padding: 0; color: white; }
 #answer .answers .correct { background: green; }
 #answer .answers .incorrect { background: red; }
-.timer {
-    text-align: center;
-    font-size: 10em;
-}
+
 .badges, .players {
     display: flex;
     flex-flow: row wrap;
@@ -35,3 +33,6 @@ body[data-screen="final"]    #final { display: block; }
     text-align: center;
     font-size: 2em;
 }
+
+.panel-heading { font-size: 2em; }
+.panel-body { font-size: 3em; text-align: center; }
