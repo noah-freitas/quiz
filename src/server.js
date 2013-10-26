@@ -89,7 +89,7 @@ var doRound       = function (number) {
                             players = players.filter(function (player) { return player.name !== name; });
                             io.sockets.emit('player:change', playerNames());
                         }); });
-                        players.push({ name: name, socket: socket, time: 0, correct: 0 });
+                        players.push({ name: name, time: 0, correct: 0 });
                         io.sockets.emit('player:change', playerNames());
                     },
     shuffle       = function () { return Math.random() < 0.5 ? -1 : 1; },
