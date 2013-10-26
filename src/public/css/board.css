@@ -11,6 +11,8 @@ body[data-screen="final"]    #final { display: block; }
     width: 96%;
     box-sizing: border-box;
 }
+
+#question .text { font-size: 5em; }
 #question .players { padding: 0; }
 #question .players .answered { background : blue; color: white; }
 
