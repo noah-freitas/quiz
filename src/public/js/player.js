@@ -1,13 +1,12 @@
 ;(function () {
     var bodyClass = function (activate) { document.body.classList[activate ? 'add' : 'remove']('active'); },
         login     = function (e) {
-                        e.stopPropagation();
-                        e.preventDefault();
+                        if (e.stopPropagation) e.stopPropagation();
+                        if (e.preventDefault)  e.preventDefault();
                         var name = $$('#name').value;
                         if (name) {
                             server.emit('player:register', name);
                             document.body.innerHTML = '<p class="waiting">Waiting for game to start...</p>';
-                            alert(name);
                         }
                         return false;
                     },
@@ -32,6 +31,4 @@
         $$('#login').addEventListener('submit', login);
         $$('#join').addEventListener('click', login);
     });
-
-    window.onerror = function (e) { document.body.innerHTML = JSON.stringify(e); };
 }());
