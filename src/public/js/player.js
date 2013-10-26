@@ -11,7 +11,7 @@
                     },
         render    = function (q) {
                         bodyClass(true);
-                        document.body.innerHTML = q.choices.map(function (ans) { return '<button class=answer>' + ans + '</button>'; }).join('');
+                        document.body.innerHTML = q.choices.map(function (ans) { return '<button class="answer btn btn-info">' + ans + '</button>'; }).join('');
                         wireAns();
                     },
         sendEvent = function (e) {
