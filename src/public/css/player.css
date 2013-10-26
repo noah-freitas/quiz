@@ -12,3 +12,9 @@ body:not(.active) button.answer {
 button.answer.selected {
     background: orange !important;
 }
+p.waiting {
+    font-size: 4em;
+    flex: 1 1 auto;
+    text-align: center;
+    align-self: center;
+}

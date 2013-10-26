@@ -6,7 +6,7 @@
                         var name = $$('#name').value;
                         if (name) {
                             server.emit('player:register', name);
-                            document.body.innerHTML = '<p>Waiting for game to start...</p>';
+                            document.body.innerHTML = '<p class="waiting">Waiting for game to start...</p>';
                         }
                     },
         render    = function (q) {
