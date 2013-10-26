@@ -4,6 +4,13 @@ body[data-screen="question"] #question,
 body[data-screen="answer"]   #answer,
 body[data-screen="final"]    #final { display: block; }
 
+#start #start-game {
+    padding: 1em;
+    font-size: 1.2em;
+    margin: 2%;
+    width: 96%;
+    box-sizing: border-box;
+}
 #question .players { padding: 0; }
 #question .players .answered { background : blue; color: white; }
 
