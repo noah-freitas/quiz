@@ -12,7 +12,11 @@
         <script src="/js/board.js"></script>
     </head>
     <body data-screen="start">
-        <h1>Quiz</h1>
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="javascript:void 0;">Halloween Trivia</a>
+            </div>
+        </nav>
         <div id="start">
             <h2>Connected Players</h2>
             <ul class="players"></ul>
@@ -34,12 +38,19 @@
             </div>
         </div>
         <div id="answer">
-            <p><strong>Correct Answer:</strong> <span class="correct"></span></p>
+            <div class="panel panel-sucess">
+                <div class="panel-heading">
+                    <strong>Correct Answer</strong>
+                </div>
+                <div class="panel-body">
+                    <span class="correct"></span>
+                </div>
+            </div>
             <ul class="answers badges"></ul>
         </div>
         <div id="final">
             <p><strong>Winner:</strong> <span class="winner"></span></p>
-            <table>
+            <table class="table table-striped">
                 <thead>
                     <tr>
                         <th>Name</th>
