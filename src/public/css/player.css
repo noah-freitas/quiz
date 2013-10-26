@@ -1,9 +1,13 @@
 html, body { height: 100%; }
 body {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
     display: flex;
     flex-direction: column;
 }
 button.answer {
+    dispplay: block;
+    -webkit-box-flex: 1;
     flex: 1 1 auto;
 }
 body:not(.active) button.answer {
