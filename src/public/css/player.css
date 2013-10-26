@@ -6,7 +6,7 @@ body {
     flex-direction: column;
 }
 button.answer {
-    dispplay: block;
+    display: block;
     -webkit-box-flex: 1;
     flex: 1 1 auto;
 }
