@@ -1,5 +1,14 @@
 ;(function () {
     var bodyClass = function (activate) { document.body.classList[activate ? 'add' : 'remove']('active'); },
+        login     = function (e) {
+                        e.stopPropagation();
+                        e.preventDefault();
+                        var name = $$('#name').value;
+                        if (name) {
+                            server.emit('player:register', name);
+                            document.body.innerHTML = '<p>Waiting for game to start...</p>';
+                        }
+                    },
         render    = function (q) {
                         bodyClass(true);
                         document.body.innerHTML = q.choices.map(function (ans) { return '<button class=answer>' + ans + '</button>'; }).join('');
@@ -18,12 +27,7 @@
     server.on('question:end', bodyClass.bind(null, false));
 
     document.addEventListener('DOMContentLoaded', function () {
-        $$('#join').addEventListener('click', function () {
-            var name = $$('#name').value;
-            if (name) {
-                server.emit('player:register', name);
-                document.body.innerHTML = '<p>Waiting for game to start...</p>';
-            }
-        });
+        $$('#login').addEventListener('submit', login);
+        $$('#join').addEventListener('click', login);
     });
 }());
