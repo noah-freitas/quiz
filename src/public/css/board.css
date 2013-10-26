@@ -14,11 +14,11 @@ body[data-screen="final"]    #final { display: block; }
     text-align: center;
     font-size: 10em;
 }
-.badges {
+.badges, .players {
     display: flex;
     flex-flow: row wrap;
 }
-.badges > * {
+.badges > *, .players > * {
     padding: 20px;
     margin: 20px;
     list-style: none;
