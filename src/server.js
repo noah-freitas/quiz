@@ -6,10 +6,10 @@ var express = require('express'),
     io      = require('socket.io').listen(server);
 
 // Config
-var ansPause   = 4000,
-    numRounds  = 9,
-    qDuration  = 10,
-    qPath      = '../data/halloween-trivia.json';
+var ansPause   = 10000,
+    numRounds  = 7,
+    qDuration  = 20,
+    qPath      = '../data/javascript-trivia.json';
 
 // State
 var board      = null,
