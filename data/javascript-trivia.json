@@ -19,15 +19,15 @@
     "choices" : ["history.pushState", "CORS", "JSONP", "window.postMessage"],
     "correct" : "history.pushState"
 }, {
-    "text"    : "Evaluate: <code>[1, 2, 3].map(function (n) { return n * 2; });</code>",
+    "text"    : "Evaluate: <code>[1, 2, 3].map(function (n) { <wbr>&nbsp;&nbsp;return n * 2; <wbr>});</code>",
     "choices" : ["[2, 4, 6]", "true", "12", "[[1, 2], [2, 4], [3, 6]]"],
     "correct" : "[2, 4, 6]"
 }, {
-    "text"    : "Evaluate: <code>[1, 2, 3].reduce(function (a, b) { return a + b; }, 10);</code>",
+    "text"    : "Evaluate: <code>[1, 2, 3].reduce(function (a, b) { <wbr>&nbsp;&nbsp;return a + b; <wbr>}, 10);</code>",
     "choices" : ["16", "6", "60", "[1, 3, 6, 10]"],
     "correct" : "16"
 }, {
-    "text"    : "Evaluate: <code>[1, 2, 3].filter(function (n) { return n > 10; });</code>",
+    "text"    : "Evaluate: <code>[1, 2, 3].filter(function (n) { <wbr>&nbsp;&nbsp;return n > 10; <wbr>});</code>",
     "choices" : ["[]", "true", "false", "null"],
     "correct" : "[]"
 }, {

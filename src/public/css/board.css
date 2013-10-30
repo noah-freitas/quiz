@@ -13,6 +13,7 @@ body[data-screen="final"]    #final { display: block; }
 }
 
 #question .text { font-size: 5em; }
+#question .text code { display: block; font-size: 90%; }
 #question .timer { text-align: center; font-size: 10em; }
 #question .players { padding: 0; }
 #question .players .answered { background : blue; color: white; }
