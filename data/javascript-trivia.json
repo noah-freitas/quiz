@@ -34,5 +34,49 @@
     "text"    : "WebRTC stands for:",
     "choices" : ["Web Real Time Communication", "Web Radio Transmission Circuit", "Web Random Theta Combinator", "Web Range Transportation Center"],
     "correct" : "Web Real Time Communication"
+}, {
+    "text"    : "Who created JavaScript?",
+    "choices" : ["Brendan Eich", "James Gosling", "Rasmus Lerdorf", "Yukihiro Matsumoto"],
+    "correct" : "Brendan Eich"
+}, {
+    "text"    : "JavaScript's prototypal inheritance was inspired by which language?",
+    "choices" : ["Self", "Scheme", "C", "Java"],
+    "correct" : "Self"
+}, {
+    "text"    : "Evaluate: <code>{ test: '123' } === <wbr>{ test: '123' }</code>",
+    "choices" : ["false", "true", "0", "1"],
+    "correct" : "false"
+}, {
+    "text"    : "<code>n => n * 2</code> is an example of which new JavaScript feature?",
+    "choices" : ["Arrow Functions", "Default Parameters", "Proxies", "Generators"],
+    "correct" : "Arrow Functions"
+}, {
+    "text"    : "JavaScript was first released under what name?",
+    "choices" : ["LiveScript", "Java", "ECMAScript", "CoffeeScript"],
+    "correct" : "LiveScript"
+}, {
+    "text"    : "Who currently controls the trademark \"JavaScript\"",
+    "choices" : ["Oracle", "Netscape", "Mozilla", "Microsoft"],
+    "correct" : "Oracle"
+}, {
+    "text"    : "In the browser, AJAX functionality is provided through which API?",
+    "choices" : ["XMLHttpRequest", "Request", "Http", "EventSource"],
+    "correct" : "XMLHttpRequest"
+}, {
+    "text"    : "Which of these statements will create a new object?",
+    "choices" : ["All of them.", "Object.create(null)", "{}", "new Object"],
+    "correct" : "All of them."
+}, {
+    "text"    : "Who first first specified JSON?",
+    "choices" : ["Douglas Crockford", "Brendan Eich", "Jesse James Garrett", "Larry Ellison"],
+    "correct" : "Douglas Crockford"
+}, {
+    "text"    : "What was the first JavaScript engine?",
+    "choices" : ["SpiderMonkey", "Rhino", "Nitro", "V8"],
+    "correct" : "SpiderMonkey"
+}, {
+    "text"    : "Which of these values is not of type number?",
+    "choices" : ["/123/", "NaN", "Infinity", "3E15"],
+    "correct" : "/123/"
 }]
 

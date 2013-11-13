@@ -7,7 +7,7 @@ var express = require('express'),
 
 // Config
 var ansPause   = 10000,
-    numRounds  = 8,
+    numRounds  = 19,
     qDuration  = 20,
     qPath      = '../data/javascript-trivia.json';
 
