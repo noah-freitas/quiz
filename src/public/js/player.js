@@ -20,8 +20,7 @@
                         e.target.classList.add('selected');
                         server.emit('answer', e.target.textContent);
                     },
-        wireAns   = function () { $('.answer').forEach(function (but) { but.addEventListener('click', sendEvent, false); }); },
-        server    = io.connect('http://quiz.noahfreitas.com/');
+        wireAns   = function () { $('.answer').forEach(function (but) { but.addEventListener('click', sendEvent, false); }); };
 
     server.on('question:start', render);
     server.on('question:end', bodyClass.bind(null, false));

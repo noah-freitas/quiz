@@ -1,15 +1,10 @@
 // Imports
-var express = require('express'),
+var config  = require('./config.json'),
+    express = require('express'),
     http    = require('http'),
     app     = express(),
     server  = http.createServer(app),
     io      = require('socket.io').listen(server);
-
-// Config
-var ansPause   = 10000,
-    numRounds  = 19,
-    qDuration  = 20,
-    qPath      = '../data/javascript-trivia.json';
 
 // State
 var board      = null,
@@ -27,7 +22,7 @@ var doRound       = function (number) {
                             number        : number + 1,
                             playerAnswers : [],
                             question      : q.text,
-                            remaining     : qDuration,
+                            remaining     : config.qDuration,
                             time          : currentTime()
                         };
                         rounds.push(round);
@@ -39,7 +34,7 @@ var doRound       = function (number) {
                         if (round.remaining === 0 || round.playerAnswers.length === players.length) {
                             clearInterval(round.timer);
                             io.sockets.emit('question:end', { correct: round.correctAnswer, answers: round.playerAnswers });
-                            if (number === numRounds) {
+                            if (number === config.numRounds) {
                                 setTimeout(function () {
                                     io.sockets.emit('game:end', players.map(function (p) {
                                         return {
@@ -57,16 +52,16 @@ var doRound       = function (number) {
                                             else                 return 1;
                                         }
                                     }));
-                                }, ansPause);
+                                }, config.ansPause * 1000);
                             } else {
-                                setTimeout(doRound.bind(null, number + 1), ansPause);
+                                setTimeout(doRound.bind(null, number + 1), config.ansPause * 1000);
                             }
                         } else {
                             io.sockets.emit('question:countdown', round.remaining);
                         }
                     },
     getPlayer     = function (name) { return players.filter(function (player) { return player.name === name; })[0]; },
-    loadQuestions = function () { questions = require(qPath).sort(shuffle).slice(0, numRounds + 1).map(function (q) { q.choices = q.choices.sort(shuffle); return q; }); },
+    loadQuestions = function () { questions = require(config.qPath).sort(shuffle).slice(0, config.numRounds + 1).map(function (q) { q.choices = q.choices.sort(shuffle); return q; }); },
     playerNames   = function () { return players.map(function (player) { return player.name; }).sort(); },
     registerBoard = function (socket) {
                         board = socket;
@@ -97,9 +92,15 @@ var doRound       = function (number) {
     startGame     = function () { loadQuestions(); resetPlayers(); rounds = []; doRound(0); },
     currentTime   = function () { return (new Date).getTime(); };
 
-app.use(express.static(__dirname + '/public'));
+app.configure(function () {
+    app.set('views', __dirname + '/views');
+    app.set('view engine', 'jade');
+    app.get('/player', function (req, res) { res.render('player', config); });
+    app.get('/board', function (req, res) { res.render('board', config); });
+    app.use(express.static(__dirname + '/public'));
+});
 
-server.listen('9876');
+server.listen(config.serverPort);
 
 io.sockets.on('connection', function (socket) {
     socket.on('board:register' , registerBoard.bind(null, socket));

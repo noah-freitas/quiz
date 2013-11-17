@@ -1,0 +1,19 @@
+{
+    "#"          : "The number of seconds to pause on the answer screen in between questions.",
+    "ansPause"   : 10,
+
+    "#"          : "The number of questions to ask in the game.",
+    "numRounds"  : 10,
+
+    "#"          : "The number of seconds to display each question.",
+    "qDuration"  : 20,
+
+    "#"          : "The path to the JSON data file containing the questions.",
+    "qPath"      : "../data/javascript-trivia.json",
+
+    "#"          : "The port number on which to run the server.",
+    "serverPort" : 9876,
+
+    "#"          : "The absolute URL from which the server will be running.",
+    "serverUrl"  : "http://localhost:9876/"
+}

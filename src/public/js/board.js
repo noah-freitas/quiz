@@ -22,8 +22,7 @@
                                 $$('#question .timer').innerHTML = q.remaining.toString().length < 2 ? '0' + q.remaining : q.remaining;
                                 $$('#question .players').innerHTML = q.players.map(function (p) { return '<li data-player="' + p + '">' + p + '</li>'; }).join('');
                             },
-        toLi              = function (text) { return '<li>' + text + '</li>'; },
-        server            = io.connect('http://quiz.noahfreitas.com/');
+        toLi              = function (text) { return '<li>' + text + '</li>'; };
 
     server.on('player:change', render);
     server.on('player:answer', showAnswered);

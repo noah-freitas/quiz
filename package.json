@@ -1,0 +1,23 @@
+{
+  "name": "quiz",
+  "version": "0.0.0",
+  "description": "Simple quiz game.",
+  "main": "src/server.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/noah-freitas/quiz.git"
+  },
+  "author": "Noah J Freitas <noah.j.freitas@gmail.com>",
+  "license": "BSD",
+  "dependencies": {
+    "express": "~3.4.4",
+    "socket.io": "~0.9.16"
+  }
+}

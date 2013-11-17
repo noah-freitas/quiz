@@ -1,0 +1,55 @@
+doctype 5
+html(lang="en")
+    head
+        meta(charset="utf-8")
+        meta(name="viewport", content="initial-scale=1")
+        meta(http-equiv="X-UA-Compatible", content="IE=Edge")
+        title Quiz
+        link(rel="stylesheet", href="/css/bootstrap.min.css")
+        link(rel="stylesheet", href="/css/bootstrap-theme.min.css")
+        link(rel="stylesheet", href="/css/board.css")
+        script(src="/socket.io/socket.io.js")
+        script var server = io.connect('#{serverUrl}');
+        script(src="/js/dom.js")
+        script(src="/js/board.js")
+        script(src="https://login.persona.org/include.js")
+    body(data-screen="start")
+        nav(class="navbar navbar-default", role="navigation")
+            div.navbar-header
+                a.navbar-brand(href="javascript:void 0;") JavaScript Trivia
+        div#start
+            div(class="panel panel-default")
+                div.panel-heading
+                    strong Connected Players
+                div.panel-body
+                    ul.players
+            button#start-game(class="btn btn-primary btn-block") Start Game
+        div#question
+            div.jumbotron
+                div.container
+                    h2.text
+            div.row
+                div.col-md-6
+                    p.timer
+                div.col-md-6
+                    ul(class="players badges")
+        div#answer
+            div(class="panel panel-success")
+                div.panel-heading
+                    strong Correct Answer
+                div.panel-body
+                    span.correct
+            ul(class="answers badges")
+        div#final
+            div(class="panel panel-primary")
+                div.panel-heading
+                    strong Winner
+                div.panel-body
+                    span.winner
+            table(class="table table-striped")
+                thead
+                    tr
+                        th Name
+                        th Correct
+                        th Time
+                tbody.scores

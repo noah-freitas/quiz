@@ -1,0 +1,25 @@
+doctype 5
+html(lang="en")
+    head
+        meta(charset="utf-8")
+        meta(name="viewport", content="initial-scale=1")
+        meta(http-equiv="X-UA-Compatible", content="IE=Edge")
+        title Quiz
+        link(rel="stylesheet", href="/css/bootstrap.min.css")
+        link(rel="stylesheet", href="/css/bootstrap-theme.min.css")
+        link(rel="stylesheet", href="/css/player.css")
+        script(src="/js/polyfill.js")
+        script(src="/socket.io/socket.io.js")
+        script var server = io.connect('#{serverUrl}');
+        script(src="/js/dom.js")
+        script(src="/js/player.js")
+        script(src="https://login.persona.org/include.js")
+    body
+        form#login.form-horizontal(role="form", onsubmit="return false;")
+            div.form-group
+                label(for="name", class="col-lg-2 control-label") Name
+                div.col-lg-10
+                    input(type="text", class="form-control input-lg", id="name", placeholder="Name", autofocus)
+            div.form-group
+                div.col-lg-10
+                    button#join(class="btn btn-primary btn-block btn-lg") Join Game
